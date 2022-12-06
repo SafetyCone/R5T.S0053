@@ -8,6 +8,6 @@ namespace R5T.S0053
 	[ValuesMarker]
 	public partial interface IDirectoryPaths : IValuesMarker
 	{
-        public string TemporarySolutionParent => @"C:\Temp\Projects";
+        public string TemporarySolutionParent => @"C:\Temp\Solutions";
     }
 }

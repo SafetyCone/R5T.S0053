@@ -9,94 +9,137 @@ namespace R5T.S0053
 	[FunctionalityMarker]
 	public partial interface ISolutionScripts : IFunctionalityMarker
 	{
-		public async Task CreateWebBlazorClientAndServer()
-		{
-            /// Inputs.
-            var solutionName =
-                SolutionNames.Instance.Example
-                ;
-
-            var solutionDescription =
-                SolutionDescriptions.Instance.Example
-                ;
+        public async Task AddProjectToSolution_RazorClassLibrary()
+        {
+            /// Inputs
+            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.E0065.Private\source\R5T.E0065.Private.sln";
+            var projectName = "R5T.E0065.R002";
+            var projectDescription = "An example Razor class library.";
 
 
-			/// Run.
-            var solutionFileContext = await SolutionOperator.Instance.InClearedSolutionDirectoryPathInformationContext(
-                DirectoryPaths.Instance.TemporarySolutionParent,
-                solutionName,
-                async solutionFileContext =>
-                {
-                    await F0085.SolutionFileOperations.Instance.CreateNew_VS2022(
-                        solutionFileContext.SolutionFilePath);
-
-                    // Create the console project.
-                    var consoleProjectName = F0055.ProjectNameOperator.Instance.GetConsoleProjectName_FromSolutionName(solutionName);
-                    var consoleProjectDescription = F0055.ProjectDescriptionOperator.Instance.GetConsoleProjectDescription_FromSolutionDescription(solutionDescription);
-
-                    var projectFilePath = F0052.ProjectPathsOperator.Instance.GetProjectFilePath_FromSolutionDirectoryPath(
-                        solutionFileContext.SolutionDirectoryPath,
-                        consoleProjectName);
-
-                    await Instances.ProjectOperations.CreateNewProject_Console(
-                        projectFilePath,
-                        solutionDescription);
-
-                    F0024.SolutionFileOperator.Instance.AddProject(
-                        solutionFileContext.SolutionFilePath,
-                        projectFilePath);
-
-                    // Add all dependency projects.
-                    await F0063.SolutionOperations.Instance.AddMissingDependencies(
-                        solutionFileContext.SolutionFilePath);
-                });
-
-            await F0088.VisualStudioOperator.Instance.OpenSolutionFile(solutionFileContext.SolutionFilePath);
+            /// Run.
+            await F0087.SolutionOperations.Instance.AddProjectToSolution_RazorClassLibrary(
+                solutionFilePath,
+                projectName,
+                projectDescription);
         }
 
-		public async Task CreateConsoleSolution()
+        public async Task CreateWebStaticRazorComponents()
+        {
+            /// Inputs.
+            var libraryContext =
+                Instances.LibraryContexts.Example
+                ;
+            var isRepositoryPrivate = true;
+            var repositoryDirectoryPath = DirectoryPaths.Instance.TemporarySolutionParent;
+
+
+            /// Run.
+            var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
+                repositoryDirectoryPath);
+
+            await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+
+            var createSolutionResult = await F0087.SolutionOperations.Instance.Create_WebStaticRazorComponents(
+                libraryContext,
+                isRepositoryPrivate,
+                repositoryDirectoryPath);
+
+            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+        }
+
+        public async Task CreateWebBlazorClientAndServer()
+        {
+            /// Inputs.
+            var libraryContext =
+                Instances.LibraryContexts.Example
+                ;
+            var isRepositoryPrivate = true;
+            var repositoryDirectoryPath = DirectoryPaths.Instance.TemporarySolutionParent;
+
+
+            /// Run.
+            var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
+                repositoryDirectoryPath);
+
+            await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+
+            var createSolutionResult = await F0087.SolutionOperations.Instance.Create_WebBlazorClientAndServer(
+                libraryContext,
+                isRepositoryPrivate,
+                repositoryDirectoryPath);
+
+            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+        }
+
+        public async Task CreateConsoleWithLibrarySolution()
+        {
+            /// Inputs.
+            var libraryContext = Instances.LibraryContexts.Example;
+            var isPrivate = true;
+            var repositoryDirectoryPath = DirectoryPaths.Instance.TemporarySolutionParent;
+
+
+            /// Run.
+            var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
+                repositoryDirectoryPath);
+
+            await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+
+            var createSolutionResult = await F0087.SolutionOperations.Instance.Create_ConsoleWithLibrarySolution(
+                libraryContext,
+                isPrivate,
+                repositoryDirectoryPath);
+
+            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+        }
+
+        public async Task CreateRazorClassLibrarySolution()
+        {
+            /// Inputs.
+            var libraryContext = Instances.LibraryContexts.Example;
+            var isRepositoryPrivate = true;
+            var repositoryDirectoryPath = DirectoryPaths.Instance.TemporarySolutionParent;
+
+
+            /// Run.
+            var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
+                repositoryDirectoryPath);
+
+            await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+
+            var solutionContext = Instances.SolutionContextOperations.GetSolutionContext(
+                libraryContext,
+                isRepositoryPrivate,
+                repositoryDirectoryPath);
+
+            var createSolutionResult = await F0087.SolutionOperations.Instance.Create_RazorClassLibrarySolution(
+                libraryContext,
+                solutionContext);
+
+            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+        }
+
+        public async Task CreateSolution_Console()
 		{
-			/// Inputs.
-			var solutionName =
-				SolutionNames.Instance.Example
-				;
-
-			var solutionDescription =
-				SolutionDescriptions.Instance.Example
-				;
+            /// Inputs.
+            var libraryContext = Instances.LibraryContexts.Example;
+            var isPrivate = true;
+            var repositoryDirectoryPath = DirectoryPaths.Instance.TemporarySolutionParent;
 
 
-			/// Run.
-			var solutionFileContext = await SolutionOperator.Instance.InClearedSolutionDirectoryPathInformationContext(
-				DirectoryPaths.Instance.TemporarySolutionParent,
-				solutionName,
-				async solutionFileContext =>
-				{
-					await F0085.SolutionFileOperations.Instance.CreateNew_VS2022(
-						solutionFileContext.SolutionFilePath);
+            /// Run.
+            var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
+                repositoryDirectoryPath);
 
-					// Create the console project.
-					var consoleProjectName = F0055.ProjectNameOperator.Instance.GetConsoleProjectName_FromSolutionName(solutionName);
-					var consoleProjectDescription = F0055.ProjectDescriptionOperator.Instance.GetConsoleProjectDescription_FromSolutionDescription(solutionDescription);
+            await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
 
-					var projectFilePath = F0052.ProjectPathsOperator.Instance.GetProjectFilePath_FromSolutionDirectoryPath(
-						solutionFileContext.SolutionDirectoryPath,
-						consoleProjectName);
+            var createSolutionResult = await F0087.SolutionOperations.Instance.CreateSolution_Console(
+                libraryContext,
+                isPrivate,
+                repositoryDirectoryPath);
 
-					await Instances.ProjectOperations.CreateNewProject_Console(
-						projectFilePath,
-						solutionDescription);
-
-					F0024.SolutionFileOperator.Instance.AddProject(
-						solutionFileContext.SolutionFilePath,
-						projectFilePath);
-
-					// Add all dependency projects.
-					await F0063.SolutionOperations.Instance.AddMissingDependencies(
-						solutionFileContext.SolutionFilePath);
-				});
-
-			await F0088.VisualStudioOperator.Instance.OpenSolutionFile(solutionFileContext.SolutionFilePath);
+			F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
         }
 	}
 }
