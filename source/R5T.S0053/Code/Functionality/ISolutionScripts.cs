@@ -199,16 +199,19 @@ namespace R5T.S0053
                 //Instances.LibraryContexts.Example
                 new LibraryContext
                 {
-                    LibraryName = "R5T.S0060.Deploy",
-                    LibraryDescription = "Deployment script for R5T.S0060 projects."
+                    LibraryName = "R5T.S0007.Deploy",
+                    LibraryDescription = "Deployment script for R5T.S0007 project."
                 }
                 ;
-            var targetProjectName = "R5T.S0060";
-            var isPrivate = false;
+            var targetProjectName = "R5T.S0007";
+            var isPrivate =
+                true
+                //false
+                ;
             var repositoryDirectoryPath =
                 //DirectoryPaths.Instance.TemporarySolutionParent
-                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.S0060\"
-                //@"C:\Code\DEV\Git\GitHub\davidcoats\D8S.C0002.Private\"
+                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.S0007.Private\"
+                //@"C:\Code\DEV\Git\GitHub\davidcoats\D8S.S0003.Private\"
                 ;
 
 
