@@ -10,7 +10,7 @@ namespace R5T.S0053
         {
             //await SolutionScripts.Instance.New_Console();
             //await SolutionScripts.Instance.New_ConsoleWithLibrary();
-            await SolutionScripts.Instance.New_DeployScripts();
+            //await SolutionScripts.Instance.New_DeployScripts();
             //await SolutionScripts.Instance.New_WebBlazorClientAndServer();
             //await SolutionScripts.Instance.New_WebStaticRazorComponents();
             //await SolutionScripts.Instance.New_RazorClassLibrarySolution();
