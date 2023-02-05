@@ -1,6 +1,6 @@
 using System;
 using System.Threading.Tasks;
-
+using LibGit2Sharp;
 using R5T.T0132;
 using R5T.T0153;
 
@@ -9,9 +9,54 @@ namespace R5T.S0053
 	[FunctionalityMarker]
 	public partial interface ISolutionScripts : IFunctionalityMarker
 	{
+        /// <summary>
+        /// Generates a blog web application solution.
+        /// A blog is a web application using:
+        /// * Razor components, that are statically rendered on the server.
+        /// * Blog post text cacheing, the text of each blog post is only rendered once per application run.
+        /// * An external library containing blog post content as Razor components.
+        /// * Use the Tailwind CSS typography package.
+        /// </summary>
+        public async Task New_Blog()
+        {
+            /// Inputs.
+            var deleteSolutionDirectoryForConstruction = false;
+            var libraryContext =
+                //Instances.LibraryContexts.Example
+                new LibraryContext
+                {
+                    LibraryName = "D8S.W0003",
+                    LibraryDescription = "A private repo for a remake of David Coats’s technical blog.",
+                }
+                ;
+            var isRepositoryPrivate = true;
+            var repositoryDirectoryPath =
+                //DirectoryPaths.Instance.TemporarySolutionParent
+                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0003.Private"
+                ;
+
+
+            /// Run.
+            if(deleteSolutionDirectoryForConstruction)
+            {
+                var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
+                    repositoryDirectoryPath);
+
+                await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+            }
+
+            var createSolutionResult = await F0087.SolutionOperations.Instance.NewSolution_Blog(
+                libraryContext,
+                isRepositoryPrivate,
+                repositoryDirectoryPath);
+
+            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+        }
+
         public async Task New_WindowFormsApplication()
         {
             /// Inputs.
+            var deleteSolutionDirectoryForConstruction = false;
             var libraryContext =
                 Instances.LibraryContexts.Example
                 ;
@@ -20,10 +65,13 @@ namespace R5T.S0053
 
 
             // Run.
-            var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
-                repositoryDirectoryPath);
+            if(deleteSolutionDirectoryForConstruction)
+            {
+                var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
+                    repositoryDirectoryPath);
 
-            await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+                await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+            }
 
             var createSolutionResult = await F0087.SolutionOperations.Instance.NewSolution_WindowsFormsApplication(
                 libraryContext,
@@ -51,9 +99,9 @@ namespace R5T.S0053
         public async Task AddProjectToSolution_Library()
         {
             /// Inputs
-            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.L0028\source\R5T.L0028.Construction.sln";
-            var projectName = "R5T.L0028.T001";
-            var projectDescription = "Strong types for deployment functionality.";
+            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.S0061\source\R5T.S0061.S001.sln";
+            var projectName = "R5T.S0061.F002";
+            var projectDescription = "Instances search functionality.";
 
 
             /// Run.
@@ -90,18 +138,33 @@ namespace R5T.S0053
         public async Task New_WebBlazorClientAndServer()
         {
             /// Inputs.
+            var deleteSolutionDirectoryForConstruction = false;
             var libraryContext =
-                Instances.LibraryContexts.Example
+                //Instances.LibraryContexts.Example
+                new LibraryContext
+                {
+                    LibraryName = "R5T.W0004",
+                    LibraryDescription = "A functionality search website.",
+                }
                 ;
-            var isRepositoryPrivate = true;
-            var repositoryDirectoryPath = DirectoryPaths.Instance.TemporarySolutionParent;
+            var isRepositoryPrivate =
+                true
+                //false
+                ;
+            var repositoryDirectoryPath =
+                //DirectoryPaths.Instance.TemporarySolutionParent
+                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.W0004.Private"
+                ;
 
 
             /// Run.
             var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
                 repositoryDirectoryPath);
 
-            await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+            if(deleteSolutionDirectoryForConstruction)
+            {
+                await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+            }
 
             var createSolutionResult = await F0087.SolutionOperations.Instance.NewSolution_WebBlazorClientAndServer(
                 libraryContext,
@@ -136,16 +199,33 @@ namespace R5T.S0053
         public async Task New_RazorClassLibrarySolution()
         {
             /// Inputs.
-            var libraryContext = Instances.LibraryContexts.Example;
-            var isRepositoryPrivate = true;
-            var repositoryDirectoryPath = DirectoryPaths.Instance.TemporarySolutionParent;
+            var deleteSolutionDirectoryForConstruction = false;
+            var libraryContext =
+                //Instances.LibraryContexts.Example
+                new LibraryContext
+                {
+                    LibraryName = "D8S.R0001",
+                    LibraryDescription = "Blog article utility Razor components."
+                }
+                ;
+            var isRepositoryPrivate =
+                //true
+                false
+                ;
+            var repositoryDirectoryPath =
+                //DirectoryPaths.Instance.TemporarySolutionParent
+                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.R0001\"
+                ;
 
 
             /// Run.
             var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
                 repositoryDirectoryPath);
 
-            await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+            if(deleteSolutionDirectoryForConstruction)
+            {
+                await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+            }
 
             var createSolutionResult = await F0087.SolutionOperations.Instance.NewSolution_RazorClassLibrary(
                 libraryContext,
@@ -199,19 +279,19 @@ namespace R5T.S0053
                 //Instances.LibraryContexts.Example
                 new LibraryContext
                 {
-                    LibraryName = "R5T.S0007.Deploy",
-                    LibraryDescription = "Deployment script for R5T.S0007 project."
+                    LibraryName = "R5T.C0003.Deploy",
+                    LibraryDescription = "Deployment script for the R5T.C0003 Ithaca code operations project."
                 }
                 ;
-            var targetProjectName = "R5T.S0007";
+            var targetProjectName = "R5T.C0003";
             var isPrivate =
-                true
-                //false
+                //true
+                false
                 ;
             var repositoryDirectoryPath =
                 //DirectoryPaths.Instance.TemporarySolutionParent
-                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.S0007.Private\"
-                //@"C:\Code\DEV\Git\GitHub\davidcoats\D8S.S0003.Private\"
+                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.C0003\"
+                //@"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0001.Private\"
                 ;
 
 
