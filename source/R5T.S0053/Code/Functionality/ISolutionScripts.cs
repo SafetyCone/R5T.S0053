@@ -204,8 +204,8 @@ namespace R5T.S0053
                 //Instances.LibraryContexts.Example
                 new LibraryContext
                 {
-                    LibraryName = "D8S.R0001",
-                    LibraryDescription = "Blog article utility Razor components."
+                    LibraryName = "D8S.R0003",
+                    LibraryDescription = "Generally useful links as Razor components."
                 }
                 ;
             var isRepositoryPrivate =
@@ -214,7 +214,7 @@ namespace R5T.S0053
                 ;
             var repositoryDirectoryPath =
                 //DirectoryPaths.Instance.TemporarySolutionParent
-                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.R0001\"
+                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.R0003"
                 ;
 
 
