@@ -99,9 +99,9 @@ namespace R5T.S0053
         public async Task AddProjectToSolution_Library()
         {
             /// Inputs
-            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.S0061\source\R5T.S0061.S001.sln";
-            var projectName = "R5T.S0061.F002";
-            var projectDescription = "Instances search functionality.";
+            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.F0018\source\R5T.F0018.Construction.sln";
+            var projectName = "R5T.F0018.F001";
+            var projectDescription = "Reflection operations with strongly-typed inputs from R5T.T0161.";
 
 
             /// Run.
