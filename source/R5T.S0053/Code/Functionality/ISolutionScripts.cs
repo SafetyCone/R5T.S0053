@@ -1,8 +1,11 @@
 using System;
 using System.Threading.Tasks;
+
 using LibGit2Sharp;
+
 using R5T.T0132;
 using R5T.T0153;
+
 
 namespace R5T.S0053
 {
@@ -84,9 +87,9 @@ namespace R5T.S0053
         public async Task AddProjectToSolution_RazorClassLibrary()
         {
             /// Inputs
-            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.E0065.Private\source\R5T.E0065.Private.sln";
-            var projectName = "R5T.E0065.R002";
-            var projectDescription = "An example Razor class library.";
+            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0004.Private\source\D8S.W0004.Private.sln";
+            var projectName = "R5T.W0004.R000";
+            var projectDescription = "Razor components library for David Coats's personal blog project.";
 
 
             /// Run.
@@ -99,9 +102,9 @@ namespace R5T.S0053
         public async Task AddProjectToSolution_Library()
         {
             /// Inputs
-            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.F0018\source\R5T.F0018.Construction.sln";
-            var projectName = "R5T.F0018.F001";
-            var projectDescription = "Reflection operations with strongly-typed inputs from R5T.T0161.";
+            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.F0108\source\R5T.F0108.Construction.sln";
+            var projectName = "R5T.F0108.Z000";
+            var projectDescription = "Values for the repository directory path operator library.";
 
 
             /// Run.
@@ -114,18 +117,30 @@ namespace R5T.S0053
         public async Task New_WebStaticRazorComponents()
         {
             /// Inputs.
+            var deleteSolutionDirectoryForConstruction = false;
             var libraryContext =
-                Instances.LibraryContexts.Example
+                //Instances.LibraryContexts.Example
+                new LibraryContext
+                {
+                    LibraryName = "D8S.W0004",
+                    LibraryDescription = "David Coats's personal blog."
+                }
                 ;
             var isRepositoryPrivate = true;
-            var repositoryDirectoryPath = DirectoryPaths.Instance.TemporarySolutionParent;
+            var repositoryDirectoryPath =
+                //DirectoryPaths.Instance.TemporarySolutionParent
+                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0004.Private\"
+                ;
 
 
             /// Run.
             var solutionDirectoryPath = Instances.SolutionContextOperations.GetSolutionDirectoryPath(
                 repositoryDirectoryPath);
 
-            await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+            if(deleteSolutionDirectoryForConstruction)
+            {
+                await Instances.FileSystemOperator.ClearDirectory(solutionDirectoryPath);
+            }
 
             var createSolutionResult = await F0087.SolutionOperations.Instance.NewSolution_WebStaticRazorComponents(
                 libraryContext,
@@ -279,19 +294,19 @@ namespace R5T.S0053
                 //Instances.LibraryContexts.Example
                 new LibraryContext
                 {
-                    LibraryName = "R5T.C0003.Deploy",
-                    LibraryDescription = "Deployment script for the R5T.C0003 Ithaca code operations project."
+                    LibraryName = "D8S.W0003.Deploy",
+                    LibraryDescription = "Deployment script for the D8S.W0003 personal technical blog project."
                 }
                 ;
-            var targetProjectName = "R5T.C0003";
+            var targetProjectName = "D8S.W0003";
             var isPrivate =
                 //true
                 false
                 ;
             var repositoryDirectoryPath =
                 //DirectoryPaths.Instance.TemporarySolutionParent
-                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.C0003\"
-                //@"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0001.Private\"
+                //@"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.W0005\"
+                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0003.Private\"
                 ;
 
 
