@@ -102,9 +102,9 @@ namespace R5T.S0053
         public async Task AddProjectToSolution_Library()
         {
             /// Inputs
-            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.F0108\source\R5T.F0108.Construction.sln";
-            var projectName = "R5T.F0108.Z000";
-            var projectDescription = "Values for the repository directory path operator library.";
+            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.S0063.Private\source\R5T.S0063.Private.sln";
+            var projectName = "R5T.S0063.F000";
+            var projectDescription = "Common functionality for the R5T.S0063 Fresno (instances survey) script.";
 
 
             /// Run.
@@ -294,19 +294,19 @@ namespace R5T.S0053
                 //Instances.LibraryContexts.Example
                 new LibraryContext
                 {
-                    LibraryName = "D8S.W0003.Deploy",
-                    LibraryDescription = "Deployment script for the D8S.W0003 personal technical blog project."
+                    LibraryName = "R5T.T0167.Deploy",
+                    LibraryDescription = "Deployment script for the R5T.T0167 types library containing all marker attribute types."
                 }
                 ;
-            var targetProjectName = "D8S.W0003";
+            var targetProjectName = "R5T.T0167";
             var isPrivate =
                 //true
                 false
                 ;
             var repositoryDirectoryPath =
                 //DirectoryPaths.Instance.TemporarySolutionParent
-                //@"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.W0005\"
-                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0003.Private\"
+                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.T0167\"
+                //@"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0003.Private\"
                 ;
 
 
