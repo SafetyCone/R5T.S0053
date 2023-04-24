@@ -28,14 +28,14 @@ namespace R5T.S0053
                 //Instances.LibraryContexts.Example
                 new LibraryContext
                 {
-                    LibraryName = "D8S.W0003",
-                    LibraryDescription = "A private repo for a remake of David Coats’s technical blog.",
+                    LibraryName = "D8S.W0005",
+                    LibraryDescription = "A private repository for the blog for Chris’s leg.",
                 }
                 ;
             var isRepositoryPrivate = true;
             var repositoryDirectoryPath =
                 //DirectoryPaths.Instance.TemporarySolutionParent
-                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0003.Private"
+                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0005.Private"
                 ;
 
 
@@ -87,9 +87,9 @@ namespace R5T.S0053
         public async Task AddProjectToSolution_RazorClassLibrary()
         {
             /// Inputs
-            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0004.Private\source\D8S.W0004.Private.sln";
-            var projectName = "R5T.W0004.R000";
-            var projectDescription = "Razor components library for David Coats's personal blog project.";
+            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0005.Private\source\D8S.W0005.Private.sln";
+            var projectName = "D8S.W0005.R000";
+            var projectDescription = "Razor components library for the blog for Chris's leg project.";
 
 
             /// Run.
@@ -102,9 +102,9 @@ namespace R5T.S0053
         public async Task AddProjectToSolution_Library()
         {
             /// Inputs
-            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.S0063.Private\source\R5T.S0063.Private.sln";
-            var projectName = "R5T.S0063.F000";
-            var projectDescription = "Common functionality for the R5T.S0063 Fresno (instances survey) script.";
+            var solutionFilePath = @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.L0030\source\R5T.L0030.Construction.sln";
+            var projectName = "R5T.L0030.T000";
+            var projectDescription = "Strong-types for XML XElements.";
 
 
             /// Run.
@@ -294,19 +294,19 @@ namespace R5T.S0053
                 //Instances.LibraryContexts.Example
                 new LibraryContext
                 {
-                    LibraryName = "R5T.T0167.Deploy",
-                    LibraryDescription = "Deployment script for the R5T.T0167 types library containing all marker attribute types."
+                    LibraryName = "D8S.W0005.Deploy",
+                    LibraryDescription = "Deployment script for the D8S.W0005 blog project."
                 }
                 ;
-            var targetProjectName = "R5T.T0167";
+            var targetProjectName = "D8S.W0005";
             var isPrivate =
                 //true
                 false
                 ;
             var repositoryDirectoryPath =
                 //DirectoryPaths.Instance.TemporarySolutionParent
-                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.T0167\"
-                //@"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0003.Private\"
+                //@"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.T0167\"
+                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0005.Private\"
                 ;
 
 
