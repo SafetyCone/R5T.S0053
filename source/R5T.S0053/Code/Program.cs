@@ -17,7 +17,7 @@ namespace R5T.S0053
             //await SolutionScripts.Instance.New_WindowFormsApplication();
             //await SolutionScripts.Instance.New_Blog();
 
-            await SolutionScripts.Instance.AddProjectToSolution_Library();
+            //await SolutionScripts.Instance.AddProjectToSolution_Library();
             //await SolutionScripts.Instance.AddProjectToSolution_RazorClassLibrary();
 
             //await Construction.Instance.AddTailwindCSSTypography();
