@@ -167,8 +167,8 @@ namespace R5T.S0053
                 //false
                 ;
             var repositoryDirectoryPath =
-                //DirectoryPaths.Instance.TemporarySolutionParent
-                @"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.W0004.Private"
+                DirectoryPaths.Instance.TemporarySolutionParent
+                //@"C:\Code\DEV\Git\GitHub\SafetyCone\R5T.W0004.Private"
                 ;
 
 
