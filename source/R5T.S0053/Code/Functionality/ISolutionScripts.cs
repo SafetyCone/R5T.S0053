@@ -28,14 +28,14 @@ namespace R5T.S0053
                 //Instances.LibraryContexts.Example
                 new LibraryContext
                 {
-                    LibraryName = "D8S.W0005",
-                    LibraryDescription = "A private repository for the blog for Chris’s leg.",
+                    LibraryName = "Sample.Repository",
+                    LibraryDescription = "A test blog.",
                 }
                 ;
             var isRepositoryPrivate = true;
             var repositoryDirectoryPath =
                 //DirectoryPaths.Instance.TemporarySolutionParent
-                @"C:\Code\DEV\Git\GitHub\davidcoats\D8S.W0005.Private"
+                @"C:\Code\DEV\Git\GitHub\SafetyCone\Sample.Repository.Private\"
                 ;
 
 
