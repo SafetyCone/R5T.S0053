@@ -20,7 +20,7 @@ namespace R5T.S0053
 
             async Task Internal(string solutionDirectoryPath)
             {
-                var solutionFilePath = F0050.SolutionPathsOperator.Instance.GetSolutionFilePath(
+                var solutionFilePath = F0050.SolutionPathsOperator.Instance.Get_SolutionFilePath(
                     solutionDirectoryPath,
                     solutionName);
 
@@ -47,7 +47,7 @@ namespace R5T.S0053
         {
             var solutionDirectoryName = F0050.DirectoryNames.Instance.Source;
 
-            var solutionDirectoryPath = F0002.PathOperator.Instance.GetDirectoryPath(
+            var solutionDirectoryPath = F0002.PathOperator.Instance.Get_DirectoryPath(
                 parentDirectoryPath,
                 solutionDirectoryName);
 
@@ -55,7 +55,7 @@ namespace R5T.S0053
 
             async Task Internal(string solutionDirectoryPath)
             {
-                var solutionFilePath = F0050.SolutionPathsOperator.Instance.GetSolutionFilePath(
+                var solutionFilePath = F0050.SolutionPathsOperator.Instance.Get_SolutionFilePath(
                     solutionDirectoryPath,
                     solutionName);
 
