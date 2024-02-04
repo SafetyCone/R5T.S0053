@@ -53,7 +53,7 @@ namespace R5T.S0053
                 isRepositoryPrivate,
                 repositoryDirectoryPath);
 
-            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+            F0088.VisualStudioOperator.Instance.Open_SolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
         }
 
         public async Task New_WindowFormsApplication()
@@ -81,7 +81,7 @@ namespace R5T.S0053
                 isRepositoryPrivate,
                 repositoryDirectoryPath);
 
-            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+            F0088.VisualStudioOperator.Instance.Open_SolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
         }
 
         public async Task AddProjectToSolution_RazorClassLibrary()
@@ -147,7 +147,7 @@ namespace R5T.S0053
                 isRepositoryPrivate,
                 repositoryDirectoryPath);
 
-            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+            F0088.VisualStudioOperator.Instance.Open_SolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
         }
 
         public async Task New_WebBlazorClientAndServer()
@@ -186,7 +186,7 @@ namespace R5T.S0053
                 isRepositoryPrivate,
                 repositoryDirectoryPath);
 
-            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+            F0088.VisualStudioOperator.Instance.Open_SolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
         }
 
         public async Task New_ConsoleWithLibrary()
@@ -208,7 +208,7 @@ namespace R5T.S0053
                 isPrivate,
                 repositoryDirectoryPath);
 
-            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+            F0088.VisualStudioOperator.Instance.Open_SolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
         }
 
         public async Task New_RazorClassLibrarySolution()
@@ -247,7 +247,7 @@ namespace R5T.S0053
                 isRepositoryPrivate,
                 repositoryDirectoryPath);
 
-            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+            F0088.VisualStudioOperator.Instance.Open_SolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
         }
 
         public async Task New_Console()
@@ -283,7 +283,7 @@ namespace R5T.S0053
                 isPrivate,
                 repositoryDirectoryPath);
 
-			F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+			F0088.VisualStudioOperator.Instance.Open_SolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
         }
 
         public async Task New_DeployScripts()
@@ -325,7 +325,7 @@ namespace R5T.S0053
                 repositoryDirectoryPath,
                 targetProjectName);
 
-            F0088.VisualStudioOperator.Instance.OpenSolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
+            F0088.VisualStudioOperator.Instance.Open_SolutionFile(createSolutionResult.SolutionContext.SolutionFilePath);
         }
     }
 }
